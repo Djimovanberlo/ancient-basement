@@ -1,1 +1,9 @@
-// import styles
+@charset 'utf-8';
+@use 'sass:math';
+
+@use './variables';
+@use './mixins';
+@use './functions.scss';
+
+// Layout
+@use '../layout/template/style.scss';
