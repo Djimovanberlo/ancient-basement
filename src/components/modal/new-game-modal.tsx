@@ -15,7 +15,7 @@ const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {
       </div>
       <div className='newGameModal__buttons'>
         <Button onClick={handleClose}>Return</Button>
-        <Button onClick={() => console.log('STARTNEW GAME')}>New Game</Button>
+        <Button onClick={() => console.log('START NEW GAME')}>New Game</Button>
       </div>
     </Modal>
   )
