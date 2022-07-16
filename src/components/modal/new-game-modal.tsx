@@ -1,15 +1,21 @@
 import Modal from '.'
 
 import { ModalProps } from '../../interfaces/components/modal'
-import { H1, H2, P1, P2 } from '../typography'
+import Button from '../button'
+import { H2, P1 } from '../typography'
 
 const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {
+  const handleClose = () => isOpen && toggleModal()
   return (
-    <Modal toggleModal={toggleModal} isOpen={isOpen}>
-      <H1>H1</H1>
-      <H2>H2</H2>
-      <P1>P1</P1>
-      <P2>P2</P2>
+    <Modal className='newGameModal' closeModal={handleClose}>
+      <div>
+        <H2>Start a new Game</H2>
+        <P1>All your previous progress will be lost.</P1>
+      </div>
+      <div className='newGameModal__buttons'>
+        <Button onClick={handleClose}>Return</Button>
+        <Button onClick={() => console.log('STARTNEW GAME')}>New Game</Button>
+      </div>
     </Modal>
   )
 }

@@ -1,9 +1,8 @@
 import { GeneralModalProps } from '../../interfaces/components/modal'
 import useClickOutside from '../../lib/hooks/useClickOutside'
 
-const Modal = ({ children, className = '', isOpen, toggleModal }: GeneralModalProps) => {
-  const handleClose = () => isOpen && toggleModal()
-  const { ref } = useClickOutside(handleClose)
+const Modal = ({ children, className = '', closeModal }: GeneralModalProps) => {
+  const { ref } = useClickOutside(closeModal)
 
   return (
     <div ref={ref} className={`modal ${className}`}>

@@ -3,4 +3,8 @@ export interface ModalProps {
   toggleModal: () => void
 }
 
-export type GeneralModalProps = ModalProps & { children: React.ReactNode; className?: string }
+export interface GeneralModalProps {
+  children: React.ReactNode
+  className?: string
+  closeModal: () => void
+}

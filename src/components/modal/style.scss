@@ -6,3 +6,28 @@
   background-color: white;
   padding: $lg;
 }
+
+.rulesModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__text {
+    overflow-y: hidden;
+  }
+
+  > button {
+    align-self: center;
+  }
+}
+
+.newGameModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
