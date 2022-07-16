@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ActiveGameProps } from '@/interfaces/pages/active'
 import { Character } from '@/interfaces/game/character'
-import CharacterCard from '@/components/character-card'
+import CharacterCard from 'Components/components/character-card'
 
 const Combat = ({ updateGameState }: ActiveGameProps) => {
   return (
