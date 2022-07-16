@@ -1,16 +1,31 @@
 import React from 'react'
 
-import { ActiveGameProps } from '../../interfaces/pages/active'
-import { GameState } from '../../interfaces/game'
+import { ActiveGameProps } from '@/interfaces/pages/active'
+import { Character } from '@/interfaces/game/character'
+import CharacterCard from '@/components/character-card'
 
-const Combat: React.FC<ActiveGameProps> = ({ updateGameState }) => {
+const Combat = ({ updateGameState }: ActiveGameProps) => {
   return (
-    <div>
-      Combat
-      <div onClick={() => updateGameState(GameState.DEFEAT)}>Set defeat</div>
-      <div onClick={() => updateGameState(GameState.VICTORY)}>Set victory</div>
-    </div>
+    <>
+      <CharacterCard character={Character.IRENE} />
+      <CharacterCard character={Character.CHAD} />
+      <CharacterCard character={Character.OLIVE} />
+      <CharacterCard character={Character.EUGENE} />
+    </>
   )
 }
 
 export default Combat
+
+// "paths": {
+//   "@/components/*": ["src/components/*"],
+//   "@/interfaces/*": ["src/interfaces/*"],
+//   "@/layout/*": ["src/layout/*"],
+//   "@/lib/*": ["src/lib/*"],
+//   "@/pages/*": ["src/pages/*"],
+//   "@/store/*": ["src/store/*"],
+//   "@/styles/*": ["src/styles/*"]
+// }
+// },
+// "include": ["src, **/*.ts", "**/*.tsx"],
+// "exclude": ["node_modules"]
