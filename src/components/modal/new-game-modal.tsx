@@ -6,6 +6,7 @@ import { H2, P1 } from '../typography'
 
 const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {
   const handleClose = () => isOpen && toggleModal()
+
   return (
     <Modal className='newGameModal' closeModal={handleClose}>
       <div>
