@@ -16,3 +16,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('./fonts/Roboto-Regular.woff') format('woff');
+  fonst-style: normal;
+  font-display: swap;
+}
