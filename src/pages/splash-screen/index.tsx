@@ -8,7 +8,7 @@ const SplashScreen = () => {
   console.log(isRulesOpen)
 
   return (
-    <div className='splashScreen'>
+    <div className={`splashScreen ${isNewGameOpen || isRulesOpen ? 'splashScreen--darken' : ''}`}>
       {isNewGameOpen && <NewGameModal toggleModal={toggleNewGameOpen} isOpen={isNewGameOpen} />}
       {isRulesOpen && <RulesModal toggleModal={toggleRulesOpen} isOpen={isRulesOpen} />}
       <div className='splashScreen__buttonWrapper'>

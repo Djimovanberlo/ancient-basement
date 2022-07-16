@@ -6,3 +6,21 @@
   grid-template-rows: repeat($row, minmax(0, 1fr));
   grid-template-columns: repeat($row, minmax(0, 1fr));
 }
+
+@mixin text($size: null, $lineHeight: null, $letter_spacing: null, $weight: null) {
+  @if $size != null {
+    font-size: $size;
+  }
+
+  @if $lineHeight != null {
+    line-height: $lineHeight;
+  }
+
+  @if $letter_spacing != null {
+    letter-spacing: $letter_spacing;
+  }
+
+  @if $weight != null {
+    font-weight: $weight;
+  }
+}
