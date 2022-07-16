@@ -1,8 +1,7 @@
-import Modal from '.'
-
-import { ModalProps } from '../../interfaces/components/modal'
-import Button from '../button'
-import { H2, P1 } from '../typography'
+import { ModalProps } from 'interfaces/components/modal'
+import Button from 'components/button'
+import Modal from 'components/modal'
+import { H2, P1 } from 'components/typography'
 
 const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {
   const handleClose = () => isOpen && toggleModal()

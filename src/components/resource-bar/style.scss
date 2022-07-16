@@ -1,0 +1,32 @@
+.resourceBar {
+  position: relative;
+  margin: 0 auto;
+  height: $sm;
+  width: 80%;
+  background-color: lightgrey;
+  border-radius: $md;
+  overflow: hidden;
+
+  &:first-of-type {
+    margin-top: $sm;
+  }
+
+  &:last-of-type {
+    margin-top: $xs;
+  }
+
+  &__current {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    &__health {
+      background-color: green;
+    }
+
+    &__mana {
+      background-color: blue;
+    }
+  }
+}

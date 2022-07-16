@@ -15,7 +15,7 @@ const useClickOutside = (cb: () => void) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [ref])
+  }, [ref, cb])
 
   return { ref }
 }

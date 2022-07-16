@@ -1,14 +1,24 @@
 .characterCard {
+  padding: $sm;
+  grid-row: 11 / 13;
+
+  > #H2 {
+    text-align: center;
+  }
+
   &--Irene {
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
   }
 
   &--Chad {
+    grid-column: 4 / 7;
   }
 
   &--Olive {
+    grid-column: 7 / 10;
   }
 
   &--Eugene {
+    grid-column: 10 / 13;
   }
 }
