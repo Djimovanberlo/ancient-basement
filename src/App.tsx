@@ -2,9 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Template from './layout/template'
-import Grid from './layout/grid'
 import Active from './pages/active'
-import Splash from './pages/splash'
+import Splash from './pages/splash-screen'
 
 import './styles/globals.css'
 import './styles/main.scss'
@@ -15,12 +14,10 @@ function App() {
     <div className='ancient-basement'>
       <PreventPortrait>
         <Template>
-          <Grid>
-            <Routes>
-              <Route path='/' element={<Splash />} />
-              <Route path='/active' element={<Active />} />
-            </Routes>
-          </Grid>
+          <Routes>
+            <Route path='/' element={<Splash />} />
+            <Route path='/active' element={<Active />} />
+          </Routes>
         </Template>
       </PreventPortrait>
     </div>
