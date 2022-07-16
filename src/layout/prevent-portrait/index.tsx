@@ -7,7 +7,7 @@ import useScreenOrientation from '../../lib/hooks/useScreenOrientation'
 const PreventPortrait = ({ children }: { children: React.ReactNode }) => {
   const screenOrientation = useScreenOrientation()
   const isPortrait = screenOrientation === ScreenOrientation.PORTRAIT
-  const isTabletOrMobile: boolean = isTablet || isMobile
+  const isTabletOrMobile = isTablet || isMobile
 
   if (isPortrait && isTabletOrMobile) return <div>Game only available on landscape</div>
   return <>{children}</>
