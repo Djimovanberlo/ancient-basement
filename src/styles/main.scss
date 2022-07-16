@@ -1,1 +1,18 @@
-// import styles
+@charset 'utf-8';
+@use 'sass:math';
+
+@import './variables';
+@import './mixins';
+@import './functions.scss';
+
+// App
+@import './app.scss';
+
+// Layout
+@import '../layout/template/style.scss';
+
+// Pages
+@import '../pages/splash-screen/style.scss';
+
+// Components
+@import '../components/button/style.scss';

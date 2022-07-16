@@ -1,0 +1,22 @@
+@function strip-unit($num) {
+  @return math.div($num, ($num * 0 + 1));
+}
+
+// 1rem = 16px, default setting of the browser
+$rem-base: 16 !default;
+
+// This function works on converting px to rem
+@function px-to-rem($pixels) {
+  $rem-vals: ();
+  @each $val in $pixels {
+    @debug 'val: #{$val}';
+    $val-in-rems: math.div(strip-unit($val), $rem-base) * 1rem;
+    $rem-vals: append($rem-vals, $val-in-rems);
+  }
+
+  @if length($rem-vals) == 1 {
+    @return nth($rem-vals, 1);
+  } @else {
+    @return $rem-vals;
+  }
+}
