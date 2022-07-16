@@ -7,16 +7,27 @@ import Splash from './pages/splash'
 
 import './styles/globals.css'
 import './styles/main.scss'
+import PreventPortrait from './layout/prevent-portrait'
 
 function App() {
   return (
-    <Template>
-      <Routes>
-        <Route path='/' element={<Splash />} />
-        <Route path='/active' element={<Active />} />
-      </Routes>
-    </Template>
+    <div className='ancient-basement'>
+      <PreventPortrait>
+        <Template>
+          <Routes>
+            <Route path='/' element={<Splash />} />
+            <Route path='/active' element={<Active />} />
+          </Routes>
+        </Template>
+      </PreventPortrait>
+    </div>
   )
 }
 
 export default App
+
+// GameProvider
+// Store
+// Template
+//
+// Routes

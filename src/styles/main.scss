@@ -1,9 +1,12 @@
 @charset 'utf-8';
 @use 'sass:math';
 
-@use './variables';
-@use './mixins';
-@use './functions.scss';
+@import './variables';
+@import './mixins';
+@import './functions.scss';
+
+// App
+@import './app.scss';
 
 // Layout
-@use '../layout/template/style.scss';
+@import '../layout/template/style.scss';
