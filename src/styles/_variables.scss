@@ -1,2 +1,8 @@
-// variables
-$test-red: red;
+@import './functions.scss';
+
+// Margins
+$xs: px-to-rem(8);
+$sm: px-to-rem(16);
+$md: px-to-rem(24);
+$lg: px-to-rem(32);
+$xl: px-to-rem(40);
