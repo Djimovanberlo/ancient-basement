@@ -1,6 +1,8 @@
 import Button from '@mui/material/Button'
 
-const ButtonComponent = ({ children, className, onClick }: any) => {
+import { ButtonProps } from '../../interfaces/components/button'
+
+const ButtonComponent = ({ children, className = '', onClick }: ButtonProps) => {
   return (
     <Button className={`button ${className}`} onClick={onClick} variant='contained'>
       {children}
