@@ -1,0 +1,9 @@
+.characterIcon {
+  &--large {
+    @include make-diamond($lg);
+  }
+
+  &--small {
+    @include make-diamond($md);
+  }
+}

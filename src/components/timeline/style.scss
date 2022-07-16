@@ -1,0 +1,11 @@
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 3 / 11;
+  grid-row: 1 / 2;
+  align-self: end;
+  height: calc($xs / 2);
+  border-radius: $xs;
+  background-color: black;
+}
