@@ -1,13 +1,17 @@
 import React from 'react'
-import ButtonComponent from '../../components/button'
+
+import Button from '../../components/button'
+import useSplashScreen from '../../lib/hooks/useSplashScreen'
 
 const SplashScreen = () => {
+  const { navigateToActive } = useSplashScreen()
+
   return (
     <div className='splashScreen'>
       <div className='splashScreen__buttonWrapper'>
-        <ButtonComponent>Continue</ButtonComponent>
-        <ButtonComponent>New Game</ButtonComponent>
-        <ButtonComponent>Rules</ButtonComponent>
+        <Button onClick={navigateToActive}>Continue</Button>
+        <Button>New Game</Button>
+        <Button>Rules</Button>
       </div>
     </div>
   )
