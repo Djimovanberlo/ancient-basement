@@ -1,17 +1,33 @@
 import { AttackType } from 'interfaces/game/elements'
-import { AbilityNames } from './ability'
+import { AbilityName } from './ability'
+
+export enum WeaponName {
+  SHORT_SWORD = 'Short Sword',
+}
+
+export enum HelmetName {
+  SHORT_SWORD = 'Short Sword',
+}
+
+export enum ArmorName {
+  SHORT_SWORD = 'Short Sword',
+}
+
+export enum AccessoryName {
+  SHORT_SWORD = 'Short Sword',
+}
 
 export interface Equipment {
   maxHealth?: number
   maxMana?: number
-  strength?: number
+  StatName?: number
   defense?: number
   intelligence?: number
   resistance?: number
   agility?: number
 }
 
-export type Armor = Equipment
+export type Gear = Equipment
 
 export interface Weapon extends Equipment {
   attackType: AttackType
@@ -20,5 +36,5 @@ export interface Weapon extends Equipment {
 }
 
 export interface Accessory extends Equipment {
-  ability: AbilityNames
+  ability: AbilityName
 }

@@ -1,5 +1,5 @@
-import { Character } from './character'
-import { Accessory, Armor, Weapon } from './equipment'
+import { Stats } from './stats'
+import { AccessoryName, ArmorName, HelmetName, WeaponName } from './equipment'
 
 export enum HeroName {
   IRENE = 'Irene',
@@ -8,12 +8,17 @@ export enum HeroName {
   EUGENE = 'Eugene',
 }
 
-export interface Hero extends Character {
+export interface HeroInventory {
+  weapon: WeaponName | null
+  head: HelmetName | null
+  body: ArmorName | null
+  accessory1: AccessoryName | null
+  accessory2: AccessoryName | null
+  accessory3: AccessoryName | null
+}
+
+export interface Hero {
   name: HeroName
-  weapon: Weapon
-  head: Armor
-  body: Armor
-  accessory1: Accessory
-  accessory2: Accessory
-  accessory3: Accessory
+  inventory: HeroInventory
+  stats: Stats
 }

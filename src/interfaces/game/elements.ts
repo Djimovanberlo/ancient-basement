@@ -3,6 +3,6 @@ export enum AttackType {
   MAGICAL = 'magical',
 }
 
-export enum ElementNames {
+export enum ElementName {
   FIRE = 'fire',
 }

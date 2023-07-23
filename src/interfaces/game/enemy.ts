@@ -1,10 +1,12 @@
-import { AbilityNames } from './ability'
-import { Character } from './character'
+import { AbilityName } from './ability'
+import { Stats } from './stats'
 
 export enum EnemyName {
   GOBLIN = 'goblin',
 }
 
-export interface Enemy extends Character {
-  abilities: AbilityNames[]
+export interface Enemy {
+  name: EnemyName
+  abilities: AbilityName[]
+  stats: Stats
 }

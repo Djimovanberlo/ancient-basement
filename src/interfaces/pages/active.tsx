@@ -1,4 +1,4 @@
-import { GameState } from '../game'
+import { GameState } from 'interfaces/game'
 
 export interface ActiveGameProps {
   updateGameState: (newGameState: GameState) => void

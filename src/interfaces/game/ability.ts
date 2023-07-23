@@ -1,3 +1,3 @@
-export enum AbilityNames {
+export enum AbilityName {
   FIREBALL = 'fireball',
 }

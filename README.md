@@ -13,7 +13,7 @@
 - React typescript
 - SASS
 - Redux toolkit
-- Game data like party status and items should be stored in localStorage to prevent refreshing issues. This data should be hashed to prevent cheating
+- Game data like party status and items should be stored in localStorage ONLY when the player loses - otherwise the player can refresh to retry turns or fights if they don't work out
 
 ### Flavor
 
