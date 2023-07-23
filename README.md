@@ -73,8 +73,12 @@ During the active screen, players can also click on more info icons, allowing th
 
 ### Stats
 
+Primary stats
+
 - Health: Hit points; when it reaches 0, the hero is defeated
 - Mana: spend mana to execute abilities
+
+Secondary stats
 
 - STR: determines the power of physical attacks
 - DEF: reduces the damage from physical attacks
