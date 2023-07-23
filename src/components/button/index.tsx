@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button'
 
-import { ButtonProps } from '../../interfaces/components/button'
+import { ButtonProps } from 'interfaces/components/button'
 
 const ButtonComponent = ({ children, className = '', onClick }: ButtonProps) => {
   return (

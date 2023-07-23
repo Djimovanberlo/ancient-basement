@@ -1,5 +1,5 @@
-import { GeneralModalProps } from '../../interfaces/components/modal'
-import useClickOutside from '../../lib/hooks/useClickOutside'
+import { GeneralModalProps } from 'interfaces/components/modal'
+import useClickOutside from 'lib/hooks/useClickOutside'
 
 const Modal = ({ children, className = '', closeModal }: GeneralModalProps) => {
   const { ref } = useClickOutside(closeModal)

@@ -20,3 +20,10 @@ $rem-base: 16 !default;
     @return $rem-vals;
   }
 }
+
+@function repeat-str($str, $times) {
+  @if $times > 0 {
+    @return $str + repeat-str($str, $times - 1);
+  }
+  @return '';
+}

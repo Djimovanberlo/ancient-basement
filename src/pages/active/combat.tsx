@@ -1,14 +1,12 @@
-import React from 'react'
+import { ActiveGameProps } from 'interfaces/pages/active'
+import Timeline from 'components/timeline'
+import CharacterCardsWrapper from 'components/character-cards-wrapper'
 
-import { ActiveGameProps } from '../../interfaces/pages/active'
-import { GameState } from '../../interfaces/game'
-
-const Combat: React.FC<ActiveGameProps> = ({ updateGameState }) => {
+const Combat = ({ updateGameState }: ActiveGameProps) => {
   return (
-    <div>
-      Combat
-      <div onClick={() => updateGameState(GameState.DEFEAT)}>Set defeat</div>
-      <div onClick={() => updateGameState(GameState.VICTORY)}>Set victory</div>
+    <div className='combat'>
+      <Timeline />
+      <CharacterCardsWrapper />
     </div>
   )
 }

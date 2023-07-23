@@ -1,0 +1,10 @@
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: end;
+  height: calc($xs / 2);
+  margin-inline: $sm;
+  border-radius: $xs;
+  background-color: black;
+}

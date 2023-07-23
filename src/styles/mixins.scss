@@ -1,13 +1,33 @@
 @import './variables.scss';
 
 // mixins
+@mixin make-diamond($size) {
+  position: relative;
+  top: -$size;
+  width: 0;
+  height: 0;
+  border: $size solid transparent;
+  border-bottom-color: red;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -$size;
+    top: $size;
+    width: 0;
+    height: 0;
+    border: $size solid transparent;
+    border-top-color: red;
+  }
+}
+
 @mixin make-grid($row, $col) {
   display: grid;
   grid-template-rows: repeat($row, minmax(0, 1fr));
-  grid-template-columns: repeat($row, minmax(0, 1fr));
+  grid-template-columns: repeat($col, minmax(0, 1fr));
 }
 
-@mixin text($size: null, $lineHeight: null, $letter_spacing: null, $weight: null) {
+@mixin text($size: null, $lineHeight: null, $letterSpacing: null, $weight: null) {
   @if $size != null {
     font-size: $size;
   }
@@ -16,8 +36,8 @@
     line-height: $lineHeight;
   }
 
-  @if $letter_spacing != null {
-    letter-spacing: $letter_spacing;
+  @if $letterSpacing != null {
+    letter-spacing: $letterSpacing;
   }
 
   @if $weight != null {

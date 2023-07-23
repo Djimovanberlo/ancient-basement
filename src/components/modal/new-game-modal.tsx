@@ -1,8 +1,7 @@
-import Modal from '.'
-
-import { ModalProps } from '../../interfaces/components/modal'
-import Button from '../button'
-import { H2, P1 } from '../typography'
+import { ModalProps } from 'interfaces/components/modal'
+import Button from 'components/button'
+import Modal from 'components/modal'
+import { H2, P1 } from 'components/typography'
 
 const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {
   const handleClose = () => isOpen && toggleModal()
@@ -15,7 +14,7 @@ const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {
       </div>
       <div className='newGameModal__buttons'>
         <Button onClick={handleClose}>Return</Button>
-        <Button onClick={() => console.log('STARTNEW GAME')}>New Game</Button>
+        <Button onClick={() => console.log('START NEW GAME')}>New Game</Button>
       </div>
     </Modal>
   )

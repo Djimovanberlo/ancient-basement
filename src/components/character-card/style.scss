@@ -1,0 +1,17 @@
+.characterCard {
+  display: flex;
+  flex-direction: column;
+  padding: $sm;
+
+  > #H2 {
+    flex: 1;
+    text-align: center;
+  }
+
+  &__resources {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+}

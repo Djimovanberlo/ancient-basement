@@ -1,11 +1,10 @@
-import Button from '../../components/button'
-import NewGameModal from '../../components/modal/new-game-modal'
-import RulesModal from '../../components/modal/rules-modal'
-import useSplashScreen from '../../lib/hooks/useSplashScreen'
+import useSplashScreen from 'lib/hooks/useSplashScreen'
+import Button from 'components/button'
+import NewGameModal from 'components/modal/new-game-modal'
+import RulesModal from 'components/modal/rules-modal'
 
 const SplashScreen = () => {
   const { navigateToActive, isNewGameOpen, toggleNewGameOpen, isRulesOpen, toggleRulesOpen } = useSplashScreen()
-  console.log(isRulesOpen)
 
   return (
     <div className={`splashScreen ${isNewGameOpen || isRulesOpen ? 'splashScreen--darken' : ''}`}>
