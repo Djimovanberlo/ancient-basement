@@ -3,13 +3,13 @@ import Card from '@mui/material/Card'
 import { Resource } from 'interfaces/game/resources'
 import ResourceBar from 'components/resource-bar'
 import { H2 } from 'components/typography'
-import { Character } from 'interfaces/game/character'
+import { HeroName } from 'interfaces/game/hero'
 
-const CharacterCard = ({ character }: { character: Character }) => {
+const HeroCard = ({ heroName }: { heroName: HeroName }) => {
   return (
-    <Card className={`characterCard characterCard--${character}`} variant='outlined'>
-      <H2>{character}</H2>
-      <div className='characterCard__resources'>
+    <Card className={`heroCard heroCard--${heroName}`} variant='outlined'>
+      <H2>{heroName}</H2>
+      <div className='heroCard__resources'>
         <ResourceBar resourceType={Resource.HEALTH} />
         <ResourceBar resourceType={Resource.MANA} />
       </div>
@@ -17,4 +17,4 @@ const CharacterCard = ({ character }: { character: Character }) => {
   )
 }
 
-export default CharacterCard
+export default HeroCard

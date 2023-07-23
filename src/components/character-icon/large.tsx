@@ -1,6 +1,7 @@
-import { Character } from 'interfaces/game/character'
+import { EnemyName } from 'interfaces/game/enemy'
+import { HeroName } from 'interfaces/game/hero'
 
-const CharacterIconLarge = ({ character }: { character: Character }) => {
+const CharacterIconLarge = ({ character }: { character: HeroName | EnemyName }) => {
   return <div className='characterIcon--large'>{character}</div>
 }
 

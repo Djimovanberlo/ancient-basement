@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# The Ancient Basement
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Basic game mechanics
 
-## Available Scripts
+- Player is either on splash screen or active screen
+- While active, player completes fights in jRPG style. When they are defeated, the player returns to the splash screen and can start over
+- Each fight rewards a number of randomized things: items, abilities and equipment
+- Some equipment and abilities are epic. These equipment and abilities persist onto the next run! This amounts to the Ancient Basement being a jRPG rogue-lite
+- There is a final boss, but it is hard to reach and would require mutliple runs
 
-In the project directory, you can run:
+### Basic tech
 
-### `npm start`
+- React typescript
+- SASS
+- Redux toolkit
+- Game data like party status and items should be stored in localStorage to prevent refreshing issues. This data should be hashed to prevent cheating
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Flavor
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Parodying dungeons and dragons and Lufia II (for super NES), the Ancient Basement combines SNES era jRPG and typical ultra-nerd flavors. Imagine four friends sitting in their basement playing this game in real life - the four heroes actually look like contemporary ultra nerds, but with classic RPG clothing: starred robes, gladiatoresque armor et cetera. The imaginary heroes and enemies are hand-drawn sprites and the sounds are mouth-made. This should result in a kind of arts-and-crafts, almost primitive style.
 
-### `npm test`
+The player controls 4 heroes: Irene, Chad, Olive and Eugene.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Irene is a thin, nerdy girl with glasses, bracket locks in knight's armor
+- Chad is a massive neckbearded nerd wearing starred robes
+- Olive is a plump e-girl / anime girl wearing a gladiatoresque outfit, cat ears and big sword
+- Eugene is a thin emo nerd with black hair covering half his face. He wears a long black coat
 
-### `npm run build`
+### Terminology
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Player = end user
+- Hero: character controlled by player
+- Enemy: character controlled by the game
+- Character: either hero or enemy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- STR: strength stat
+- DEF: defense stat
+- INT: intelligence stat
+- RES: resistance stat
+- AGI: agility stat
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Status effect: something that effects the character (see additional gameplay mechanics)
+- Buff: beneficial effects
+- Debuff: disadvantageous effects
 
-### `npm run eject`
+### Splash Screen
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Player has option to
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Start a new game - thereby deleting progress of current game
+- Continue current game - meaning starting a new run with previously obtained epics
+- Read rules by way of modal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Active screen
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Each fight is split up in turns. Every character does one action per turn
+During a fight, the player may face 1 to 4 enemies
+The order in which characters do actions is re-calculated every turn (see stats for more info)
+When it's their turn, a hero can do 1 of these things:
 
-## Learn More
+- Attack: attack a single enemy. The hero uses their weapon to attack. Depending on the used weapon, this can be physical or magic damage and can have an elemental augmentation (see elements for more info)
+- Defend: increase DEF and RES for one turn and move to the front for next turn order
+- Item: use an item from the shared inventory
+- Ability: use an ability from the shared spellbook. Abilities can be single target or AoE (always like Golden Sun - one focus with two adjacent enemies als taking damage) and always have an elemental augmentation
+- Equip: equip an item from another hero's or shared inventory to the current hero's inventory - or equip an item from the current hero's inventory to another hero's the shared inventory. Equip also displays the heroes' stats and statuses
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Enemies can do 1 of a number of things, depending on the enemy
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- They might attack, defend or cast a spell
+- The target or targets depends on the enemy - it might be random, targest the highest/lowest of a stat or something else
+
+During the active screen, players can also click on more info icons, allowing them to read the meaning of certain game mechanics or icons
+
+### Stats
+
+Primary stats
+
+- Health: Hit points; when it reaches 0, the hero is defeated
+- Mana: spend mana to execute abilities
+
+Secondary stats
+
+- STR: determines the power of physical attacks
+- DEF: reduces the damage from physical attacks
+- INT: determines the power of magic attacks
+- RES: reduces the damage from magic attacks
+- AGI: determines the turn order: higher agi means earlier turn
+
+### Elements
+
+### Additional gameplay mechanics
+
+Status effects, buffs and debuffs: There are a number of status effects, like poisons or buffs
+
+- Buffs include +any stat, or +any element
+- Debuffs include -any stat, or -any element
+- Some abilities allow dispelling of buffs or debuffs
+- The design should be relatively simple, so that the status is clear from seeing icons, with no reading required
