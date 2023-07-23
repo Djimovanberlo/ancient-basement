@@ -11,8 +11,8 @@ $row-7: repeat-str('. ', $col);
 $row-8: repeat-str('. ', $col);
 $row-9: repeat-str('. ', $col);
 $row-10: repeat-str('. ', $col);
-$row-11: repeat-str('characters ', $col);
-$row-12: repeat-str('characters ', $col);
+$row-11: repeat-str('heroes ', $col);
+$row-12: repeat-str('heroes ', $col);
 
 .combat {
   @debug $col;
@@ -38,7 +38,7 @@ $row-12: repeat-str('characters ', $col);
     grid-area: timeline;
   }
 
-  & > .characterCardsWrapper {
-    grid-area: characters;
+  & > .heroCardsWrapper {
+    grid-area: heroes;
   }
 }
