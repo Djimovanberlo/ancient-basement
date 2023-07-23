@@ -9,8 +9,10 @@ const CharacterCard = ({ character }: { character: Character }) => {
   return (
     <Card className={`characterCard characterCard--${character}`} variant='outlined'>
       <H2>{character}</H2>
-      <ResourceBar resourceType={Resource.HEALTH} />
-      <ResourceBar resourceType={Resource.MANA} />
+      <div className='characterCard__resources'>
+        <ResourceBar resourceType={Resource.HEALTH} />
+        <ResourceBar resourceType={Resource.MANA} />
+      </div>
     </Card>
   )
 }
