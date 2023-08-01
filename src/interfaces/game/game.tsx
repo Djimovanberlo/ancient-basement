@@ -7,5 +7,5 @@ export enum GameState {
 
 export interface Game {
   state: GameState
-  level: number
+  basementFloor: number
 }
