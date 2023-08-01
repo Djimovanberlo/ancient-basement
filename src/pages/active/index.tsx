@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react'
 import Combat from './combat'
 import Defeat from './defeat'
 import Victory from './victory'
-import { GameState } from 'interfaces/game'
+import { GameState } from 'interfaces/game/game'
 
 const Active = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.COMBAT)

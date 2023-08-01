@@ -4,7 +4,7 @@ import { Enemy } from 'interfaces/game/enemy'
 
 export const ENEMIES_KEY = 'enemies'
 
-export const globalInventoryState = atom<Enemy[]>({
+export const EnemiesState = atom<Enemy[]>({
   key: ENEMIES_KEY,
   default: [],
 })
