@@ -1,9 +1,3 @@
-export enum ActionNames {
-  ATTACK = 'attack',
-  DEFEND = 'defend',
-  ABILITY = 'ability',
-  ITEM = 'item',
-  INVENTORY = 'inventory',
-}
+import { HeroActionNames } from './character-actions'
 
-export type Turn = Record<ActionNames, { isSelected: false }>
+export type Turn = Record<HeroActionNames, { isSelected: false }>
