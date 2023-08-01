@@ -5,7 +5,8 @@ export interface Stats {
   mana: number
   strength: number
   defense: number
+  agility: number
   intelligence: number
   resistance: number
-  agility: number
+  wisdom: number
 }

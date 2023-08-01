@@ -33,15 +33,32 @@ The player controls 4 heroes: Irene, Chad, Olive and Eugene.
 - Enemy: character controlled by the game
 - Character: either hero or enemy
 
-- STR: strength stat
-- DEF: defense stat
-- INT: intelligence stat
-- RES: resistance stat
-- AGI: agility stat
+- STR: strength: increases physical damage dealt
+- DEF: defense: reduces physical damage taken
+- INT: intelligence: increases magic damage dealt and magic crit chance
+- WIS: wisdom: increases healing done and magic dodge chance
+- RES: resistance: reduces magic damage taken and
+- AGI: agility: determines turn order and increases physical crit and dodge chance
+
+- Health: hit points
+- Mana: spent using abilities
 
 - Status effect: something that effects the character (see additional gameplay mechanics)
 - Buff: beneficial effects
 - Debuff: disadvantageous effects
+
+---
+
+- Game: the overall game; a game is made up of rounds
+- Round: an instance of a battle; heroes receive rewards at the end of a round
+- Turn: an individual character's turn within the round
+- Action: a character can choose one action each turn
+
+  - Attack: attack with STR or INT and/or an element based on your equipped weapon
+  - Defend: increase DEF and RES for a turn and move up in order of next turn
+  - Ability: Use an ability from the global inventory
+  - Item: use an item from the global inventory (use once)
+  - Inventory: swap an equipped piece with another hero or global inventory
 
 ### Splash Screen
 

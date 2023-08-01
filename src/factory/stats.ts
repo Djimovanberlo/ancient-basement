@@ -8,9 +8,10 @@ export const createInitStats = (partialStats: Partial<Stats>): Stats => {
     mana: 0,
     strength: 0,
     defense: 0,
+    agility: 0,
     intelligence: 0,
     resistance: 0,
-    agility: 0,
+    wisdom: 0,
     ...partialStats,
   }
 }
