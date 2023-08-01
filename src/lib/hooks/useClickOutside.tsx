@@ -5,10 +5,7 @@ const useClickOutside = (cb: () => void) => {
 
   useEffect(() => {
     const handleClickOutside = (evt: MouseEvent) => {
-      console.log('PROC', ref.current && !ref.current.contains(evt.target))
-      if (ref.current && !ref.current.contains(evt.target)) {
-        cb()
-      }
+      if (ref.current && !ref.current.contains(evt.target)) cb()
     }
 
     document.addEventListener('mousedown', handleClickOutside)

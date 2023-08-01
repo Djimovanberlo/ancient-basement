@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import { ScreenOrientation } from '../../interfaces/utils'
+import { ScreenOrientation } from 'interfaces/utils'
 
 const getOrientation = () => window.screen.orientation.type
 
