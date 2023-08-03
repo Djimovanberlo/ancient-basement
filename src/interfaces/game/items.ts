@@ -1,5 +1,5 @@
 import { CharacterActionActors, TargetAreaType, TargetType } from './character-actions'
-import { AttackType, ElementName } from './elements'
+import { SkillType, ElementName } from './elements'
 
 export enum ItemName {
   ICEBALL = 'iceball',
@@ -10,7 +10,7 @@ export interface Item {
   name: ItemName
   description: string
   element: ElementName
-  attackType: AttackType
+  skillType: SkillType
   target: TargetType
   targetType: TargetAreaType
   executeItem: (characterActionActors: CharacterActionActors) => CharacterActionActors

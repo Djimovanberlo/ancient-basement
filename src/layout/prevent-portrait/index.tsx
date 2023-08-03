@@ -1,8 +1,8 @@
 import React from 'react'
 import { isTablet, isMobile } from 'react-device-detect'
 
-import { ScreenOrientation } from '../../interfaces/utils'
-import useScreenOrientation from '../../lib/hooks/useScreenOrientation'
+import { ScreenOrientation } from 'interfaces/utils'
+import useScreenOrientation from 'lib/hooks/utils/useScreenOrientation'
 
 const PreventPortrait = ({ children }: { children: React.ReactNode }) => {
   const screenOrientation = useScreenOrientation()
