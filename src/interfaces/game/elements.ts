@@ -5,4 +5,5 @@ export enum AttackType {
 
 export enum ElementName {
   FIRE = 'fire',
+  ICE = 'ice',
 }

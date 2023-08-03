@@ -1,4 +1,4 @@
-export enum HeroActionNames {
+export enum HeroActionName {
   ATTACK = 'attack',
   DEFEND = 'defend',
   ABILITY = 'ability',
@@ -6,24 +6,24 @@ export enum HeroActionNames {
   INVENTORY = 'inventory',
 }
 
-export enum EnemyActionNames {
+export enum EnemyActionName {
   ATTACK = 'attack',
   DEFEND = 'defend',
   ABILITY = 'ability',
 }
 
 export interface CharacterActionActors {
-  usedBy: HeroActionNames | EnemyActionNames
-  targets: (HeroActionNames | EnemyActionNames)[]
+  usedBy: HeroActionName | EnemyActionName
+  targets: (HeroActionName | EnemyActionName)[]
 }
 
-export enum Target {
+export enum TargetType {
   SELF = 'self',
   ENEMIES = 'enemies',
   HEROES = 'heroes',
 }
 
-export enum TargetType {
+export enum TargetAreaType {
   SINGLE = 'single',
   MULTIPLE = 'multiple',
 }

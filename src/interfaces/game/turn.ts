@@ -1,10 +1,13 @@
-import { HeroActionNames } from './character-actions'
+import { AbilityName } from './ability'
+import { HeroActionName } from './character-actions'
 import { EnemyName } from './enemy'
+import { AccessoryName, ArmorName, HelmetName, WeaponName } from './equipment'
 import { HeroName } from './hero'
-
-// export type Turn = Record<HeroActionNames, { isSelected: boolean }>
+import { ItemName } from './items'
 
 export interface Turn {
-  heroActions: Record<HeroActionNames, { isSelected: boolean }>
+  state: HeroActionName | null
+  targeting: boolean
+  selection: ItemName | AbilityName | WeaponName | ArmorName | HelmetName | AccessoryName | null
   targets: (HeroName | EnemyName)[]
 }
