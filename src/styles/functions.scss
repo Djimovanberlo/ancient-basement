@@ -9,7 +9,6 @@ $rem-base: 16 !default;
 @function px-to-rem($pixels) {
   $rem-vals: ();
   @each $val in $pixels {
-    @debug 'val: #{$val}';
     $val-in-rems: math.div(strip-unit($val), $rem-base) * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }

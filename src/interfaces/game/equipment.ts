@@ -1,4 +1,4 @@
-import { AttackType } from 'interfaces/game/elements'
+import { SkillType, ElementName } from 'interfaces/game/elements'
 import { AbilityName } from './ability'
 
 export enum WeaponName {
@@ -30,7 +30,8 @@ export interface Equipment {
 export type Gear = Equipment
 
 export interface Weapon extends Equipment {
-  attackType: AttackType
+  attackType: SkillType
+  element: ElementName
   power: number
   randomModifier?: number
 }

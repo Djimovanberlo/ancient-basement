@@ -1,9 +1,13 @@
-export enum ActionNames {
-  ATTACK = 'attack',
-  DEFEND = 'defend',
-  ABILITY = 'ability',
-  ITEM = 'item',
-  INVENTORY = 'inventory',
-}
+import { AbilityName } from './ability'
+import { HeroActionName } from './character-actions'
+import { EnemyName } from './enemy'
+import { AccessoryName, ArmorName, HelmetName, WeaponName } from './equipment'
+import { HeroName } from './hero'
+import { ItemName } from './items'
 
-export type Turn = Record<ActionNames, { isSelected: false }>
+export interface Turn {
+  state: HeroActionName | null
+  targeting: boolean
+  selection: ItemName | AbilityName | WeaponName | ArmorName | HelmetName | AccessoryName | null
+  targets: (HeroName | EnemyName)[]
+}

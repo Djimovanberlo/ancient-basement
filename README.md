@@ -59,6 +59,7 @@ The player controls 4 heroes: Irene, Chad, Olive and Eugene.
   - Ability: Use an ability from the global inventory
   - Item: use an item from the global inventory (use once)
   - Inventory: swap an equipped piece with another hero or global inventory
+  - Skill: Attack, Ability or Inventory, meaning they can have element and targets
 
 ### Splash Screen
 
