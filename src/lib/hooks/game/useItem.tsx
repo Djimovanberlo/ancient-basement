@@ -1,25 +1,18 @@
 // TODO organise
 
+import itemCollection from 'data/items'
 import { ItemName } from 'interfaces/game/items'
-import { handleItem } from 'lib/game/items'
 
-const selectMainTarget = () => {}
-
-const selectSecondaryTargets = () => {}
+const selectTargets = ({ target, targetType }: any) => {}
 
 const selectUsedBy = () => {}
 
-const useItem = () => {
-  const usedBy = selectUsedBy()
-  const mainTarget = selectMainTarget()
-  const secondaryTargets = selectSecondaryTargets()
+const useItem = (itemName: ItemName) => {
+  const { target, targetType, executeItem } = itemCollection[itemName]
+  const usedBy = selectUsedBy() as any
+  const targets = selectTargets({ target, targetType }) as any
 
-  //   const newValues = handleItem({ usedBy, mainTarget, secondaryTargets })
-
-  // actions for
-  // updateStats, updateInventory
-
-  //   return (itemName: ItemName) => {
-  //     return handleItem(itemName)
-  //   }
+  return executeItem({ usedBy, targets })
 }
+
+export default useItem

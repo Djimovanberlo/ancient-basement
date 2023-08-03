@@ -1,13 +1,14 @@
-import { CharacterActionActors } from './character-actions'
+import { CharacterActionActors, Target, TargetType } from './character-actions'
 
 export enum ItemName {
   ICEBALL = 'iceball',
-  POTION = 'potion',
   FIREBALL = 'fireball',
 }
 
 export interface Item {
   name: ItemName
+  target: Target
+  targetType: TargetType
   executeItem: (characterActionActors: CharacterActionActors) => CharacterActionActors
 }
 

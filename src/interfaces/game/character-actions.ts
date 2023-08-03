@@ -14,6 +14,16 @@ export enum EnemyActionNames {
 
 export interface CharacterActionActors {
   usedBy: HeroActionNames | EnemyActionNames
-  mainTarget: HeroActionNames | EnemyActionNames
-  secondaryTargets: (HeroActionNames | EnemyActionNames)[]
+  targets: (HeroActionNames | EnemyActionNames)[]
+}
+
+export enum Target {
+  SELF = 'self',
+  ENEMIES = 'enemies',
+  HEROES = 'heroes',
+}
+
+export enum TargetType {
+  SINGLE = 'single',
+  MULTIPLE = 'multiple',
 }
