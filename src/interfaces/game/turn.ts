@@ -6,7 +6,7 @@ import { HeroName } from './hero'
 import { ItemName } from './items'
 
 export interface Turn {
-  state: HeroActionName | null
+  action: HeroActionName | null
   targeting: boolean
   selection: ItemName | AbilityName | WeaponName | ArmorName | HelmetName | AccessoryName | null
   targets: (HeroName | EnemyName)[]
