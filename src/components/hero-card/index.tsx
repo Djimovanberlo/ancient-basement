@@ -1,11 +1,10 @@
 import { useRecoilValue } from 'recoil'
-import Card from '@mui/material/Card'
 
 import { HeroName } from 'interfaces/game/hero'
 import { Resource } from 'interfaces/game/resources'
 import { selectHeroStats } from 'store/heroes/selectors'
-import ResourceBar from 'components/resource-bar'
 import { H2 } from 'components/typography'
+import ResourceBar from 'components/resource-bar'
 import ActionButtons from 'components/action-buttons'
 
 const HeroCard = ({ heroName }: { heroName: HeroName }) => {

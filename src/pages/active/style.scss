@@ -3,9 +3,9 @@ $row: 12;
 
 $row-1: repeat-str('timeline ', $col);
 $row-2: repeat-str('. ', $col);
-$row-3: repeat-str('. ', $col);
-$row-4: repeat-str('. ', $col);
-$row-5: repeat-str('. ', $col);
+$row-3: repeat-str('enemies ', $col);
+$row-4: repeat-str('enemies ', $col);
+$row-5: repeat-str('enemies ', $col);
 $row-6: repeat-str('. ', $col);
 $row-7: repeat-str('. ', $col);
 $row-8: repeat-str('. ', $col);
@@ -36,6 +36,10 @@ $row-12: repeat-str('heroes ', $col);
 
   & > .timeline {
     grid-area: timeline;
+  }
+
+  & > .enemiesWrapper {
+    grid-area: enemies;
   }
 
   & > .heroCardsWrapper {
