@@ -12,13 +12,13 @@
     left: 0;
     top: 0;
     height: 100%;
+  }
 
-    &__health {
-      background-color: green;
-    }
+  [data-resource='health'] {
+    background-color: green;
+  }
 
-    &__mana {
-      background-color: blue;
-    }
+  [data-resource='mana'] {
+    background-color: blue;
   }
 }

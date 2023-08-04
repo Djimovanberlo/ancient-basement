@@ -2,7 +2,7 @@ import { atom } from 'recoil'
 
 import { Game, GameState } from 'interfaces/game/game'
 
-export const GAME_KEY = 'game'
+const GAME_KEY = 'game'
 
 export const gameState = atom<Game>({
   key: GAME_KEY,
