@@ -1,7 +1,9 @@
 .heroCard {
   display: flex;
   flex-direction: column;
+  position: relative;
   padding: $sm;
+  border: 1px solid black;
 
   > #H2 {
     flex: 1;
