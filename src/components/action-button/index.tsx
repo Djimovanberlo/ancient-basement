@@ -1,4 +1,4 @@
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 
 import { HeroActionName } from 'interfaces/game/character-actions'
 import { turnState } from 'store/turn/atoms'

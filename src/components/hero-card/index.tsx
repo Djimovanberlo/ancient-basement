@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil'
 
 import { HeroName } from 'interfaces/game/hero'
 import { Resource } from 'interfaces/game/resources'
-import { selectHeroStats } from 'store/heroes/getters'
+import { selectHeroStats } from 'store/heroes/selectors'
 import { H2 } from 'components/typography'
 import ResourceBar from 'components/resource-bar'
 import ActionButtons from 'components/action-buttons'
