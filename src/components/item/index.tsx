@@ -9,17 +9,16 @@ const Item = () => {
   // temp
   const setTurnState = useSetRecoilState(turnState)
   const resetTurnState = useResetRecoilState(turnState)
-  const { name, description, element, skillType, target, targetArea } = itemCollection[ItemName.FIREBALL]
+  const item = itemCollection[ItemName.FIREBALL]
 
   const handleItem = () => {
-    if (target !== Target.SELF) setTurnState(prevState => ({ ...prevState, targeting: true, selection: name }))
+    if (item.target !== Target.SELF) setTurnState(prevState => ({ ...prevState, targeting: true, selection: item }))
     else {
-      // execute Item
       resetTurnState()
     }
   }
 
-  return <div onClick={handleItem}>{name}</div>
+  return <div onClick={handleItem}>{item.name}</div>
 }
 
 export default Item

@@ -10,7 +10,6 @@ import TargetMenu from 'components/target-menu'
 
 const Combat = ({ updateGameState }: ActiveGameProps) => {
   const { action, targeting } = useRecoilValue(turnState)
-  console.log('A', action, targeting)
 
   return (
     <div className='combat'>

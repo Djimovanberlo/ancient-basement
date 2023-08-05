@@ -1,7 +1,7 @@
 import { atom } from 'recoil'
 
 import { Turn } from 'interfaces/game/turn'
-import { Goblin } from 'data/enemies'
+import { goblin } from 'data/enemies'
 
 export const TURN_KEY = 'turn'
 
@@ -11,6 +11,6 @@ export const turnState = atom<Turn>({
     action: null,
     selection: null,
     targeting: false,
-    targets: [Goblin],
+    targets: [goblin],
   },
 })

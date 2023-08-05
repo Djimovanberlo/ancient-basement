@@ -7,6 +7,7 @@ export enum EnemyName {
 
 export interface Enemy {
   name: EnemyName
+  id?: string
   abilities: AbilityName[]
   stats: Stats
 }

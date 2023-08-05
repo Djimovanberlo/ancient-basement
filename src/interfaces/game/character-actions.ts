@@ -1,3 +1,6 @@
+import { Enemy } from './enemy'
+import { Hero } from './hero'
+
 export enum HeroActionName {
   ATTACK = 'attack',
   DEFEND = 'defend',
@@ -13,8 +16,13 @@ export enum EnemyActionName {
 }
 
 export interface CharacterActionActors {
-  usedBy: HeroActionName | EnemyActionName
-  targets: (HeroActionName | EnemyActionName)[]
+  usedBy: Hero | Enemy
+  targets: (Hero | Enemy)[]
+}
+
+export interface NewCharacterActionActors {
+  newUsedBy: Hero | Enemy
+  newTargets: (Hero | Enemy)[]
 }
 
 export enum Target {
