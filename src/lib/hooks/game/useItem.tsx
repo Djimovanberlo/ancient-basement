@@ -8,9 +8,9 @@ const selectTargets = ({ target, targetType }: any) => {}
 const selectUsedBy = () => {}
 
 const useItem = (itemName: ItemName) => {
-  const { target, targetType, executeItem } = itemCollection[itemName]
+  const { target, targetArea, executeItem } = itemCollection[itemName]
   const usedBy = selectUsedBy() as any
-  const targets = selectTargets({ target, targetType }) as any
+  const targets = selectTargets({ target, targetArea }) as any
 
   return executeItem({ usedBy, targets })
 }

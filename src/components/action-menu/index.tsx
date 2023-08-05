@@ -7,7 +7,13 @@ import ItemMenu from 'components/item-menu'
 const ActionMenu = () => {
   const action = useRecoilValue(selectTurnAction)
 
-  return <div className='actionMenu'>{action === HeroActionName.ITEM && <ItemMenu />}</div>
+  return (
+    <div className='actionMenu'>
+      {/* {action === HeroActionName.ABILITY && <AbilityMenu />} */}
+      {action === HeroActionName.ITEM && <ItemMenu />}
+      {/* {action === HeroActionName.INVENTORY && <InventoryMenu />} */}
+    </div>
+  )
 }
 
 export default ActionMenu

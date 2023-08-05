@@ -34,6 +34,10 @@ $row-empty: repeat-str('. ', $col);
     grid-area: 3 / 1 / 9 / 13;
   }
 
+  & > .targetMenu {
+    grid-area: 3 / 1 / 13 / 13;
+  }
+
   & > .heroCardsWrapper {
     grid-area: heroes-s / 1 / heroes-e / -1;
   }

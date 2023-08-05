@@ -1,4 +1,4 @@
-import { TargetAreaType, TargetType } from 'interfaces/game/character-actions'
+import { TargetArea, Target } from 'interfaces/game/character-actions'
 import { SkillType, ElementName } from 'interfaces/game/elements'
 import { Item, ItemCollection, ItemName } from 'interfaces/game/items'
 
@@ -7,8 +7,8 @@ export const FireBallItem: Item = {
   description: 'A ball of fire',
   element: ElementName.FIRE,
   skillType: SkillType.MAGICAL,
-  target: TargetType.ENEMIES,
-  targetType: TargetAreaType.MULTIPLE,
+  target: Target.ENEMIES,
+  targetArea: TargetArea.MULTIPLE,
   executeItem: ({ usedBy, targets }) => ({ usedBy, targets }),
 }
 
@@ -17,8 +17,8 @@ export const IceBallItem: Item = {
   description: 'A ball of ice',
   element: ElementName.ICE,
   skillType: SkillType.MAGICAL,
-  target: TargetType.ENEMIES,
-  targetType: TargetAreaType.SINGLE,
+  target: Target.ENEMIES,
+  targetArea: TargetArea.SINGLE,
   executeItem: ({ usedBy, targets }) => ({ usedBy, targets }),
 }
 

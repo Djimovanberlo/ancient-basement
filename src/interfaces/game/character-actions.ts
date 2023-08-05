@@ -17,13 +17,13 @@ export interface CharacterActionActors {
   targets: (HeroActionName | EnemyActionName)[]
 }
 
-export enum TargetType {
+export enum Target {
   SELF = 'self',
   ENEMIES = 'enemies',
   HEROES = 'heroes',
 }
 
-export enum TargetAreaType {
+export enum TargetArea {
   SINGLE = 'single',
   MULTIPLE = 'multiple',
 }
