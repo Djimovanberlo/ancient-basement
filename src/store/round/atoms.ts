@@ -1,5 +1,6 @@
-import { Round } from 'interfaces/game/round'
 import { atom } from 'recoil'
+
+import { Round } from 'interfaces/game/round'
 
 export const ROUND_KEY = 'round'
 

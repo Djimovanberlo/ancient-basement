@@ -11,7 +11,7 @@ const HeroCard = ({ heroName }: { heroName: HeroName }) => {
   const { maxHealth, maxMana, health, mana } = useRecoilValue(selectHeroStats(heroName))
 
   return (
-    <div className={`heroCard heroCard--${heroName}`}>
+    <div className='heroCard'>
       <ActionButtons />
       <H2>{heroName}</H2>
       <div className='heroCard__resources'>

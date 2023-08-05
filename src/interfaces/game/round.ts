@@ -1,7 +1,7 @@
-import { EnemyName } from './enemy'
-import { HeroName } from './hero'
+import { Enemy } from './enemy'
+import { Hero } from './hero'
 
 export interface Round {
-  turnOrder: (HeroName | EnemyName)[]
+  turnOrder: (Hero | Enemy)[]
   turnIndex: number
 }
