@@ -1,19 +1,25 @@
-import Card from '@mui/material/Card'
-
+import { Hero } from 'interfaces/game/hero'
 import { Resource } from 'interfaces/game/resources'
-import ResourceBar from 'components/resource-bar'
 import { H2 } from 'components/typography'
-import { HeroName } from 'interfaces/game/hero'
+import ResourceBar from 'components/resource-bar'
+import ActionButtons from 'components/action-buttons'
 
-const HeroCard = ({ heroName }: { heroName: HeroName }) => {
+interface Props {
+  hero: Hero
+}
+
+const HeroCard = ({ hero }: Props) => {
+  const { maxHealth, maxMana, health, mana } = hero.status.stats
+
   return (
-    <Card className={`heroCard heroCard--${heroName}`} variant='outlined'>
-      <H2>{heroName}</H2>
+    <div className='heroCard'>
+      <ActionButtons />
+      <H2>{hero.name}</H2>
       <div className='heroCard__resources'>
-        <ResourceBar resourceType={Resource.HEALTH} />
-        <ResourceBar resourceType={Resource.MANA} />
+        <ResourceBar resourceType={Resource.HEALTH} maxValue={maxHealth} currentValue={health} />
+        <ResourceBar resourceType={Resource.MANA} maxValue={maxMana} currentValue={mana} />
       </div>
-    </Card>
+    </div>
   )
 }
 

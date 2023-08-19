@@ -1,13 +1,20 @@
-import HeroCard from 'components/hero-card'
-import { HeroName } from 'interfaces/game/hero'
+import { useId } from 'react'
+import { useRecoilValue } from 'recoil'
 
-const HeroCardsWrapper = () => (
-  <div className='heroCardsWrapper'>
-    <HeroCard heroName={HeroName.IRENE} />
-    <HeroCard heroName={HeroName.CHAD} />
-    <HeroCard heroName={HeroName.OLIVE} />
-    <HeroCard heroName={HeroName.EUGENE} />
-  </div>
-)
+import { charactersState } from 'store/characters/atoms'
+import HeroCard from 'components/hero-card'
+
+const HeroCardsWrapper = () => {
+  const id = useId()
+  const { heroes } = useRecoilValue(charactersState)
+
+  return (
+    <div className='heroCardsWrapper'>
+      {heroes.map(hero => (
+        <HeroCard key={hero.name + id} hero={hero} />
+      ))}
+    </div>
+  )
+}
 
 export default HeroCardsWrapper

@@ -1,4 +1,0 @@
-export {}
-// updateStats
-// updateInventory
-// etc

@@ -1,11 +1,11 @@
-import { Stats } from './stats'
+import { Status } from './status'
 import { AccessoryName, ArmorName, HelmetName, WeaponName } from './equipment'
 
 export enum HeroName {
-  IRENE = 'Irene',
-  CHAD = 'Chad',
-  OLIVE = 'Olive',
-  EUGENE = 'Eugene',
+  IRENE = 'irene',
+  CHAD = 'chad',
+  OLIVE = 'olive',
+  EUGENE = 'eugene',
 }
 
 export interface HeroInventory {
@@ -18,7 +18,8 @@ export interface HeroInventory {
 }
 
 export interface Hero {
-  name: HeroName
+  name: HeroName | null
+  id: string
   inventory: HeroInventory
-  stats: Stats
+  status: Status
 }

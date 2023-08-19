@@ -1,4 +1,4 @@
-import { CharacterActionActors, TargetAreaType, TargetType } from './character-actions'
+import { CharacterActionActors, TargetArea, Target, NewCharacterActionActors } from './character-actions'
 import { SkillType, ElementName } from './elements'
 
 export enum ItemName {
@@ -11,9 +11,9 @@ export interface Item {
   description: string
   element: ElementName
   skillType: SkillType
-  target: TargetType
-  targetType: TargetAreaType
-  executeItem: (characterActionActors: CharacterActionActors) => CharacterActionActors
+  target: Target
+  targetArea: TargetArea
+  executeItem: (characterActionActors: CharacterActionActors) => NewCharacterActionActors
 }
 
 export type ItemCollection = Record<ItemName, Item>

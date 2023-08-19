@@ -7,9 +7,8 @@ export const TURN_KEY = 'turn'
 export const turnState = atom<Turn>({
   key: TURN_KEY,
   default: {
-    state: null,
+    action: null,
     selection: null,
     targeting: false,
-    targets: [],
   },
 })

@@ -1,44 +1,44 @@
 $col: 12;
 $row: 12;
-
-$row-1: repeat-str('timeline ', $col);
-$row-2: repeat-str('. ', $col);
-$row-3: repeat-str('. ', $col);
-$row-4: repeat-str('. ', $col);
-$row-5: repeat-str('. ', $col);
-$row-6: repeat-str('. ', $col);
-$row-7: repeat-str('. ', $col);
-$row-8: repeat-str('. ', $col);
-$row-9: repeat-str('. ', $col);
-$row-10: repeat-str('. ', $col);
-$row-11: repeat-str('heroes ', $col);
-$row-12: repeat-str('heroes ', $col);
+$row-empty: repeat-str('. ', $col);
 
 .combat {
   @debug $col;
   @include make-grid($col, $col);
   grid-template-areas:
-    $row-1
-    $row-2
-    $row-3
-    $row-4
-    $row-5
-    $row-6
-    $row-7
-    $row-8
-    $row-9
-    $row-10
-    $row-11
-    $row-12;
+    'timeline-s . . . . . . . . . . timeline-e'
+    $row-empty
+    'enemies-s . . . . . . . . . . enemies-e'
+    'enemies-s . . . . . . . . . . enemies-e'
+    'enemies-s . . . . . . . . . . enemies-e'
+    $row-empty
+    $row-empty
+    $row-empty
+    $row-empty
+    $row-empty
+    'heroes-s . . . . . . . . . . heroes-e'
+    'heroes-s . . . . . . . . . . heroes-e';
   width: 100%;
   height: 100%;
   background-color: white;
 
   & > .timeline {
-    grid-area: timeline;
+    grid-area: timeline-s / 1 / timeline-e / -1;
+  }
+
+  & > .enemiesWrapper {
+    grid-area: enemies-s / 1 / enemies-e / -1;
+  }
+
+  & > .actionMenu {
+    grid-area: 3 / 1 / 9 / 13;
+  }
+
+  & > .targetMenu {
+    grid-area: 3 / 1 / 13 / 13;
   }
 
   & > .heroCardsWrapper {
-    grid-area: heroes;
+    grid-area: heroes-s / 1 / heroes-e / -1;
   }
 }

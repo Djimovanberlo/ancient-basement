@@ -1,5 +1,5 @@
 import { AbilityName } from './ability'
-import { Stats } from './stats'
+import { Status } from './status'
 
 export enum EnemyName {
   GOBLIN = 'goblin',
@@ -7,6 +7,7 @@ export enum EnemyName {
 
 export interface Enemy {
   name: EnemyName
+  id: string
   abilities: AbilityName[]
-  stats: Stats
+  status: Status
 }

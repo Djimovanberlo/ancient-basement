@@ -1,11 +1,11 @@
-import { Stats } from 'interfaces/game/stats'
+import { Stats } from 'interfaces/game/status'
 
-export const createInitStats = (partialStats: Partial<Stats>): Stats => {
+export const createInitStats = (partialStats: Partial<Omit<Stats, 'health' | 'mana'>>): Stats => {
   return {
     maxHealth: 0,
     maxMana: 0,
-    health: 0,
-    mana: 0,
+    health: partialStats.maxHealth ?? 0,
+    mana: partialStats.maxMana ?? 0,
     strength: 0,
     defense: 0,
     agility: 0,

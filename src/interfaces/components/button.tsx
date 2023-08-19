@@ -1,5 +1,7 @@
+import { ReactNode, MouseEvent } from 'react'
+
 export interface ButtonProps {
-  children: React.ReactNode
+  children: ReactNode
   className?: string
-  onClick: (e: React.MouseEvent<HTMLElement>) => void
+  onClick: (e: MouseEvent<HTMLElement>) => void
 }
