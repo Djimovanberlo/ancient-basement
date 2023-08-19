@@ -1,5 +1,5 @@
 import { AbilityName } from './ability'
-import { Ailment, Buff, Debuff, Stats, Status } from './status'
+import { Status } from './status'
 
 export enum EnemyName {
   GOBLIN = 'goblin',

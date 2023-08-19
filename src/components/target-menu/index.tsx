@@ -1,16 +1,16 @@
-import { Character } from 'interfaces/game/character'
-import { StatusAndId } from 'interfaces/game/status'
-import { extractStatusAndId } from 'lib/game/data-types'
+import { extractStatusAndId } from 'lib/game/data-structures'
 import useUpdateCharacters from 'lib/hooks/game/useUpdateCharacters'
 import { useRecoilValue, useResetRecoilState } from 'recoil'
+import { charactersState } from 'store/characters/atoms'
 import { selectActiveTurn } from 'store/round/selectors'
 import { turnState } from 'store/turn/atoms'
 
 const TargetMenu = () => {
   const updateCharacters = useUpdateCharacters()
   const usedBy = useRecoilValue(selectActiveTurn)
-  const { targets, selection } = useRecoilValue(turnState)
+  const targets = useRecoilValue(charactersState).enemies // !TEMP
   const resetTurn = useResetRecoilState(turnState)
+  const { selection } = useRecoilValue(turnState)
 
   const usedByStatus = extractStatusAndId(usedBy)
   const targetsStatus = targets.map(extractStatusAndId)

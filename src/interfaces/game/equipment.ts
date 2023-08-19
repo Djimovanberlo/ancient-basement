@@ -6,15 +6,15 @@ export enum WeaponName {
 }
 
 export enum HelmetName {
-  SHORT_SWORD = 'Short Sword',
+  STEEL_HELMET = 'Steel Helmet',
 }
 
 export enum ArmorName {
-  SHORT_SWORD = 'Short Sword',
+  LEATHER_ARMOR = 'Leather Armor',
 }
 
 export enum AccessoryName {
-  SHORT_SWORD = 'Short Sword',
+  RUBY_RING = 'Ruby Ring',
 }
 
 export interface Equipment {

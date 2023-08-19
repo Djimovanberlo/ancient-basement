@@ -1,9 +1,8 @@
+import { useId } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { charactersState } from 'store/characters/atoms'
 import HeroCard from 'components/hero-card'
-import { HeroName } from 'interfaces/game/hero'
-import { useId } from 'react'
 
 const HeroCardsWrapper = () => {
   const id = useId()

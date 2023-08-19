@@ -1,6 +1,7 @@
-import EnemyCard from 'components/enemy-card'
 import { useId } from 'react'
 import { useRecoilValue } from 'recoil'
+
+import EnemyCard from 'components/enemy'
 import { charactersState } from 'store/characters/atoms'
 
 const EnemiesWrapper = () => {

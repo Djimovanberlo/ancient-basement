@@ -4,7 +4,7 @@ interface Props {
   enemy: Enemy
 }
 
-const EnemyCard = ({ enemy }: Props) => {
+const EnemyComponent = ({ enemy }: Props) => {
   return (
     <div className='enemy'>
       <div>{enemy.name}</div>
@@ -13,4 +13,4 @@ const EnemyCard = ({ enemy }: Props) => {
   )
 }
 
-export default EnemyCard
+export default EnemyComponent

@@ -1,5 +1,3 @@
-import { Enemy } from './enemy'
-import { Hero } from './hero'
 import { StatusAndId } from './status'
 
 export enum HeroActionName {
