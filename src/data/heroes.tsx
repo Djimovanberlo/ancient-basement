@@ -1,4 +1,4 @@
-import { initialChad, initialEugene, initialIrene, initialOlive } from 'store/heroes/initial'
+import { initialChad, initialEugene, initialIrene, initialOlive } from 'store/characters/initial'
 
 export const irene = initialIrene
 export const chad = initialChad

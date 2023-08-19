@@ -12,10 +12,8 @@ const Item = () => {
   const item = itemCollection[ItemName.FIREBALL]
 
   const handleItem = () => {
-    if (item.target !== Target.SELF) setTurnState(prevState => ({ ...prevState, targeting: true, selection: item }))
-    else {
-      resetTurnState()
-    }
+    if (item.target !== Target.SELF) return setTurnState(prevState => ({ ...prevState, targeting: true, selection: item }))
+    return resetTurnState()
   }
 
   return <div onClick={handleItem}>{item.name}</div>

@@ -1,14 +1,15 @@
-import { goblin } from 'data/enemies'
-import { Characters } from 'interfaces/game/character'
 import { atom } from 'recoil'
-import { initialChad, initialEugene, initialIrene, initialOlive } from 'store/heroes/initial'
+
+import { Characters } from 'interfaces/game/character'
+import { goblin } from 'data/enemies'
+import { initialChad, initialEugene, initialIrene, initialOlive } from './initial'
 
 const CHARACTERS_KEY = 'characters'
 
 export const charactersState = atom<Characters>({
   key: CHARACTERS_KEY,
   default: {
-    heroes: { irene: initialIrene, chad: initialChad, olive: initialOlive, eugene: initialEugene },
+    heroes: [initialIrene, initialChad, initialOlive, initialEugene],
     enemies: [goblin],
   },
 })

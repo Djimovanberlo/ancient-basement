@@ -2,7 +2,7 @@ import { selectorFamily } from 'recoil'
 
 import { HeroInventory, HeroName } from 'interfaces/game/hero'
 // import { allHeroesState } from './atoms'
-import { Stats } from 'interfaces/game/stats'
+// import { Stats } from 'interfaces/game/stats'
 
 const SELECT_HERO_STATS_KEY = 'selectHeroStats'
 

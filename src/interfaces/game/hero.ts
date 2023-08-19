@@ -1,5 +1,6 @@
-import { Stats } from './stats'
+import { Ailment, Buff, Debuff, Stats } from './status'
 import { AccessoryName, ArmorName, HelmetName, WeaponName } from './equipment'
+import { CharacterType } from './character'
 
 export enum HeroName {
   IRENE = 'irene',
@@ -18,8 +19,12 @@ export interface HeroInventory {
 }
 
 export interface Hero {
-  name: HeroName
-  id?: string
+  name: HeroName | null
+  characterType: CharacterType.HERO
+  id: number
   inventory: HeroInventory
   stats: Stats
+  buffs: Buff[]
+  debuffs: Debuff[]
+  ailments: Ailment[]
 }

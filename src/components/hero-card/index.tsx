@@ -7,7 +7,11 @@ import { H2 } from 'components/typography'
 import ResourceBar from 'components/resource-bar'
 import ActionButtons from 'components/action-buttons'
 
-const HeroCard = ({ hero }: { hero: Hero }) => {
+interface Props {
+  hero: Hero
+}
+
+const HeroCard = ({ hero }: Props) => {
   const { maxHealth, maxMana, health, mana } = hero.stats
 
   return (

@@ -27,8 +27,6 @@ export interface Equipment {
   agility?: number
 }
 
-export type Gear = Equipment
-
 export interface Weapon extends Equipment {
   attackType: SkillType
   element: ElementName

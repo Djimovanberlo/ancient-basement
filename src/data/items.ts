@@ -7,15 +7,14 @@ export const FireBallItem: Item = {
   description: 'A ball of fire',
   element: ElementName.FIRE,
   skillType: SkillType.MAGICAL,
-  target: Target.ENEMIES,
+  target: Target.OPPONENTS,
   targetArea: TargetArea.MULTIPLE,
   executeItem: ({ usedBy, targets }) => {
     const power = 5
 
     const newTargets = targets.map(target => ({ ...target, stats: { ...target.stats, health: target.stats.health - power } }))
-    console.log('WWW', newTargets)
 
-    return { newUsedBy: usedBy, newTargets }
+    return { newUsedBy: { ...usedBy }, newTargets }
   },
 }
 
@@ -24,7 +23,7 @@ export const IceBallItem: Item = {
   description: 'A ball of ice',
   element: ElementName.ICE,
   skillType: SkillType.MAGICAL,
-  target: Target.ENEMIES,
+  target: Target.OPPONENTS,
   targetArea: TargetArea.SINGLE,
   executeItem: ({ usedBy, targets }) => ({ newUsedBy: usedBy, newTargets: targets }),
 }

@@ -10,3 +10,7 @@ export interface Stats {
   resistance: number
   wisdom: number
 }
+
+export type Ailment = any
+export type Buff = any
+export type Debuff = any

@@ -27,8 +27,8 @@ export interface NewCharacterActionActors {
 
 export enum Target {
   SELF = 'self',
-  ENEMIES = 'enemies',
-  HEROES = 'heroes',
+  OPPONENTS = 'opponents',
+  ALLIES = 'allies',
 }
 
 export enum TargetArea {
