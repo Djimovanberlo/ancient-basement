@@ -1,6 +1,5 @@
 import { AbilityName } from './ability'
-import { CharacterType } from './character'
-import { Ailment, Buff, Debuff, Stats } from './status'
+import { Ailment, Buff, Debuff, Stats, Status } from './status'
 
 export enum EnemyName {
   GOBLIN = 'goblin',
@@ -8,11 +7,7 @@ export enum EnemyName {
 
 export interface Enemy {
   name: EnemyName
-  characterType: CharacterType.ENEMY
-  id: number
+  id: string
   abilities: AbilityName[]
-  stats: Stats
-  buffs: Buff[]
-  debuffs: Debuff[]
-  ailments: Ailment[]
+  status: Status
 }

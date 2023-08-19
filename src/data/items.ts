@@ -9,12 +9,21 @@ export const FireBallItem: Item = {
   skillType: SkillType.MAGICAL,
   target: Target.OPPONENTS,
   targetArea: TargetArea.MULTIPLE,
-  executeItem: ({ usedBy, targets }) => {
+  executeItem: ({ usedByStatus, targetsStatus }) => {
     const power = 5
 
-    const newTargets = targets.map(target => ({ ...target, stats: { ...target.stats, health: target.stats.health - power } }))
+    const newTargetsStatus = targetsStatus.map(target => ({
+      ...target,
+      status: {
+        ...target.status,
+        stats: {
+          ...target.status.stats,
+          health: target.status.stats.health - power,
+        },
+      },
+    }))
 
-    return { newUsedBy: { ...usedBy }, newTargets }
+    return { newUsedByStatus: { ...usedByStatus }, newTargetsStatus }
   },
 }
 
@@ -25,7 +34,7 @@ export const IceBallItem: Item = {
   skillType: SkillType.MAGICAL,
   target: Target.OPPONENTS,
   targetArea: TargetArea.SINGLE,
-  executeItem: ({ usedBy, targets }) => ({ newUsedBy: usedBy, newTargets: targets }),
+  executeItem: ({ usedByStatus, targetsStatus }) => ({ newUsedByStatus: usedByStatus, newTargetsStatus: targetsStatus }),
 }
 
 const itemCollection: ItemCollection = {

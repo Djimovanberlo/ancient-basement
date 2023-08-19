@@ -1,13 +1,11 @@
 import { HeroActionName } from './character-actions'
-import { Accessory, Equipment, Weapon } from './equipment'
 import { Ability } from './ability'
-import { Enemy } from './enemy'
-import { Hero } from './hero'
 import { Item } from './items'
+import { Character } from './character'
 
 export interface Turn {
   action: HeroActionName | null
   targeting: boolean
   selection: Item | Ability | null
-  targets: (Hero | Enemy)[]
+  targets: Character[]
 }

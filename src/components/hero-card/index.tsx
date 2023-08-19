@@ -12,7 +12,7 @@ interface Props {
 }
 
 const HeroCard = ({ hero }: Props) => {
-  const { maxHealth, maxMana, health, mana } = hero.stats
+  const { maxHealth, maxMana, health, mana } = hero.status.stats
 
   return (
     <div className='heroCard'>

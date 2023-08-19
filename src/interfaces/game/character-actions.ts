@@ -1,5 +1,6 @@
 import { Enemy } from './enemy'
 import { Hero } from './hero'
+import { StatusAndId } from './status'
 
 export enum HeroActionName {
   ATTACK = 'attack',
@@ -16,13 +17,13 @@ export enum EnemyActionName {
 }
 
 export interface CharacterActionActors {
-  usedBy: Hero | Enemy
-  targets: (Hero | Enemy)[]
+  usedByStatus: StatusAndId
+  targetsStatus: StatusAndId[]
 }
 
 export interface NewCharacterActionActors {
-  newUsedBy: Hero | Enemy
-  newTargets: (Hero | Enemy)[]
+  newUsedByStatus: StatusAndId
+  newTargetsStatus: StatusAndId[]
 }
 
 export enum Target {

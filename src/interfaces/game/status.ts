@@ -14,3 +14,12 @@ export interface Stats {
 export type Ailment = any
 export type Buff = any
 export type Debuff = any
+
+export interface Status {
+  stats: Stats
+  ailments: Ailment[]
+  buffs: Buff[]
+  debuffs: Debuff[]
+}
+
+export type StatusAndId = { status: Status } & { id: string }

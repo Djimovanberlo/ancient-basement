@@ -1,26 +1,23 @@
-import { CharacterType, Characters } from 'interfaces/game/character'
 import { NewCharacterActionActors } from 'interfaces/game/character-actions'
-import { Enemy } from 'interfaces/game/enemy'
-import { Hero } from 'interfaces/game/hero'
 import { useSetRecoilState } from 'recoil'
 import { charactersState } from 'store/characters/atoms'
 
 const useUpdateCharacters = () => {
   const setCharacters = useSetRecoilState(charactersState)
 
-  const updateCharacters = ({ newUsedBy, newTargets }: NewCharacterActionActors) => {
-    const newCharacters = newTargets.concat(newUsedBy)
+  const updateCharacters = ({ newUsedByStatus, newTargetsStatus }: NewCharacterActionActors) => {
+    const newCharactersStatus = newTargetsStatus.concat(newUsedByStatus)
 
     setCharacters(prevCharacters => {
       const newHeroes = [...prevCharacters.heroes].map(prevHero => {
-        const matchingHero = newCharacters.filter(({ characterType }) => characterType === CharacterType.HERO).find(({ id }) => id === prevHero.id)
-        if (matchingHero) return matchingHero
+        const matchingHero = newCharactersStatus.find(({ id }) => id === prevHero.id)
+        if (matchingHero) return { ...prevHero, status: matchingHero.status }
         return prevHero
       })
 
       const newEnemies = [...prevCharacters.enemies].map(prevEnemy => {
-        const matchingEnemy = newCharacters.filter(({ characterType }) => characterType === CharacterType.ENEMY).find(({ id }) => id === prevEnemy.id)
-        if (matchingEnemy) return matchingEnemy
+        const matchingEnemy = newCharactersStatus.find(({ id }) => id === prevEnemy.id)
+        if (matchingEnemy) return { ...prevEnemy, status: matchingEnemy.status }
         return prevEnemy
       })
 
