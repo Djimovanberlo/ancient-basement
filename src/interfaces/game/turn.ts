@@ -1,9 +1,8 @@
-import { HeroActionName } from './character-actions'
-import { Ability } from './ability'
-import { Item } from './items'
+import { ActionName } from 'interfaces/game/character-actions'
+import { Action } from 'interfaces/game/action'
 
 export interface Turn {
-  action: HeroActionName | null
+  action: ActionName | null
   targeting: boolean
-  selection: Item | Ability | null
+  selection: Action | null
 }

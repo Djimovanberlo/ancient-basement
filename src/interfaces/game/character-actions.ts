@@ -1,6 +1,6 @@
-import { StatusAndId } from './status'
+import { Character } from 'interfaces/game/character'
 
-export enum HeroActionName {
+export enum ActionName {
   ATTACK = 'attack',
   DEFEND = 'defend',
   ABILITY = 'ability',
@@ -8,20 +8,9 @@ export enum HeroActionName {
   INVENTORY = 'inventory',
 }
 
-export enum EnemyActionName {
-  ATTACK = 'attack',
-  DEFEND = 'defend',
-  ABILITY = 'ability',
-}
-
 export interface CharacterActionActors {
-  usedByStatus: StatusAndId
-  targetsStatus: StatusAndId[]
-}
-
-export interface NewCharacterActionActors {
-  newUsedByStatus: StatusAndId
-  newTargetsStatus: StatusAndId[]
+  usedBy: Character
+  targets: Character[]
 }
 
 export enum Target {

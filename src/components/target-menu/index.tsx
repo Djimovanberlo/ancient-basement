@@ -1,28 +1,22 @@
-import { extractStatusAndId } from 'lib/game/data-structures'
 import useUpdateCharacters from 'lib/hooks/game/useUpdateCharacters'
 import { useRecoilValue, useResetRecoilState } from 'recoil'
 import { charactersState } from 'store/characters/atoms'
-import { selectActiveTurn } from 'store/round/selectors'
+import { roundState } from 'store/round/atoms'
+
 import { turnState } from 'store/turn/atoms'
 
 const TargetMenu = () => {
   const updateCharacters = useUpdateCharacters()
-  const usedBy = useRecoilValue(selectActiveTurn)
+  const usedBy = useRecoilValue(roundState).turnOrder[0]
   const targets = useRecoilValue(charactersState).enemies // !TEMP
   const resetTurn = useResetRecoilState(turnState)
   const { selection } = useRecoilValue(turnState)
 
-  const usedByStatus = extractStatusAndId(usedBy)
-  const targetsStatus = targets.map(extractStatusAndId)
-
   const handleSelectTarget = () => {
     if (!selection) return
-    if ('executeItem' in selection) {
-      const { newUsedByStatus, newTargetsStatus } = selection.executeItem({ usedByStatus, targetsStatus })
-      updateCharacters({ newUsedByStatus, newTargetsStatus })
-      resetTurn()
-    }
-    if ('executeAbility' in selection) selection.executeAbility({ usedByStatus, targetsStatus })
+    const result = selection?.executeAction?.({ usedBy, targets })
+    updateCharacters({ usedBy: result.usedBy, targets: result.targets })
+    resetTurn()
   }
 
   return (

@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
 
-import Combat from './combat'
-import Defeat from './defeat'
-import Victory from './victory'
 import { GameState } from 'interfaces/game/game'
+import Combat from 'pages/active/combat'
+import Defeat from 'pages/active/defeat'
+import Victory from 'pages/active/victory'
 
 const Active = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.COMBAT)

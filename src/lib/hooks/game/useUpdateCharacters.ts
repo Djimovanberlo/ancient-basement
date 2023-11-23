@@ -1,12 +1,12 @@
-import { NewCharacterActionActors } from 'interfaces/game/character-actions'
+import { CharacterActionActors } from 'interfaces/game/character-actions'
 import { useSetRecoilState } from 'recoil'
 import { charactersState } from 'store/characters/atoms'
 
 const useUpdateCharacters = () => {
   const setCharacters = useSetRecoilState(charactersState)
 
-  const updateCharacters = ({ newUsedByStatus, newTargetsStatus }: NewCharacterActionActors) => {
-    const newCharactersStatus = newTargetsStatus.concat(newUsedByStatus)
+  const updateCharacters = ({ usedBy, targets }: CharacterActionActors) => {
+    const newCharactersStatus = targets.concat(usedBy)
 
     setCharacters(prevCharacters => {
       const newHeroes = [...prevCharacters.heroes].map(prevHero => {
