@@ -1,6 +1,6 @@
-import { AbilityName } from './ability'
-import { AccessoryName, ArmorName, HelmetName, WeaponName } from './equipment'
-import { ItemName } from './items'
+import { AbilityName } from 'interfaces/game/ability'
+import { AccessoryName, ArmorName, HelmetName, WeaponName } from 'interfaces/game/equipment'
+import { ItemName } from 'interfaces/game/items'
 
 export interface GlobalInventory {
   weapons: WeaponName[]

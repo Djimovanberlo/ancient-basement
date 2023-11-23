@@ -1,45 +1,23 @@
-import { TargetArea, Target } from 'interfaces/game/character-actions'
-import { SkillType, ElementName } from 'interfaces/game/elements'
-import { Item, ItemCollection, ItemName } from 'interfaces/game/items'
+import { createAction } from 'factory/action'
+import { Target, TargetArea } from 'interfaces/game/character-actions'
+import { ElementName, SkillType } from 'interfaces/game/elements'
+import { fireballEffect } from 'data/effects'
+import { ItemName } from 'interfaces/game/items'
+import { Action } from 'interfaces/game/action'
 
-export const FireBallItem: Item = {
-  name: ItemName.FIREBALL,
+export const fireballItem = createAction({
+  name: 'Fireball',
   description: 'A ball of fire',
   element: ElementName.FIRE,
   skillType: SkillType.MAGICAL,
   target: Target.OPPONENTS,
-  targetArea: TargetArea.MULTIPLE,
-  executeItem: ({ usedByStatus, targetsStatus }) => {
-    const power = 5
-
-    const newTargetsStatus = targetsStatus.map(target => ({
-      ...target,
-      status: {
-        ...target.status,
-        stats: {
-          ...target.status.stats,
-          health: target.status.stats.health - power,
-        },
-      },
-    }))
-
-    return { newUsedByStatus: { ...usedByStatus }, newTargetsStatus }
-  },
-}
-
-export const IceBallItem: Item = {
-  name: ItemName.ICEBALL,
-  description: 'A ball of ice',
-  element: ElementName.ICE,
-  skillType: SkillType.MAGICAL,
-  target: Target.OPPONENTS,
   targetArea: TargetArea.SINGLE,
-  executeItem: ({ usedByStatus, targetsStatus }) => ({ newUsedByStatus: usedByStatus, newTargetsStatus: targetsStatus }),
-}
+  executeAction: fireballEffect,
+})
 
-const itemCollection: ItemCollection = {
-  [ItemName.FIREBALL]: FireBallItem,
-  [ItemName.ICEBALL]: IceBallItem,
+const itemCollection: Record<ItemName, Action> = {
+  [ItemName.FIREBALL]: fireballItem,
+  [ItemName.ICEBALL]: fireballItem,
 }
 
 export default itemCollection

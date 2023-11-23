@@ -1,4 +1,4 @@
-import { TypographyProps } from '../../interfaces/components/typography'
+import { TypographyProps } from 'interfaces/components/typography'
 
 export const H1 = ({ children, className }: TypographyProps) => {
   return (

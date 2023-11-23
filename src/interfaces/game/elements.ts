@@ -8,3 +8,7 @@ export enum ElementName {
   FIRE = 'fire',
   ICE = 'ice',
 }
+
+export enum EffectName {
+  FIREBALL = 'fireball',
+}

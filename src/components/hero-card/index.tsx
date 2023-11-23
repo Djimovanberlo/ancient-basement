@@ -1,11 +1,11 @@
-import { Hero } from 'interfaces/game/hero'
 import { Resource } from 'interfaces/game/resources'
 import { H2 } from 'components/typography'
 import ResourceBar from 'components/resource-bar'
 import ActionButtons from 'components/action-buttons'
+import { Character } from 'interfaces/game/character'
 
 interface Props {
-  hero: Hero
+  hero: Character
 }
 
 const HeroCard = ({ hero }: Props) => {

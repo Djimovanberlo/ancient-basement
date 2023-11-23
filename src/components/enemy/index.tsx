@@ -1,7 +1,7 @@
-import { Enemy } from 'interfaces/game/enemy'
+import { Character } from 'interfaces/game/character'
 
 interface Props {
-  enemy: Enemy
+  enemy: Character
 }
 
 const EnemyComponent = ({ enemy }: Props) => {

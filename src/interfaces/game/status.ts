@@ -21,5 +21,3 @@ export interface Status {
   buffs: Buff[]
   debuffs: Debuff[]
 }
-
-export type StatusAndId = { status: Status } & { id: string }

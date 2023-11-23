@@ -1,7 +1,5 @@
-import { Enemy } from './enemy'
-import { Hero } from './hero'
+import { Character } from 'interfaces/game/character'
 
 export interface Round {
-  turnOrder: (Hero | Enemy)[]
-  turnIndex: number
+  turnOrder: Character[]
 }

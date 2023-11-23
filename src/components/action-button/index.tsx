@@ -1,10 +1,10 @@
 import { useSetRecoilState } from 'recoil'
 
-import { HeroActionName } from 'interfaces/game/character-actions'
+import { ActionName } from 'interfaces/game/character-actions'
 import { turnState } from 'store/turn/atoms'
 
 interface Props {
-  actionName: HeroActionName
+  actionName: ActionName
 }
 
 const ActionButton = ({ actionName }: Props) => {

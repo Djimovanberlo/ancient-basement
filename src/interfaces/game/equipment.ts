@@ -1,5 +1,5 @@
 import { SkillType, ElementName } from 'interfaces/game/elements'
-import { AbilityName } from './ability'
+import { AbilityName } from 'interfaces/game/ability'
 
 export enum WeaponName {
   SHORT_SWORD = 'Short Sword',
