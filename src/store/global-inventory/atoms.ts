@@ -13,7 +13,9 @@ export const initialGlobalInventory: GlobalInventory = {
   items: [],
 }
 
-export const globalInventoryState = atom<GlobalInventory>({
+const globalInventoryState = atom<GlobalInventory>({
   key: GLOBAL_INVENTORY_KEY,
   default: initialGlobalInventory,
 })
+
+export default globalInventoryState

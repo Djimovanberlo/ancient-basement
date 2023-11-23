@@ -1,30 +1,35 @@
-import { CharacterActionActors } from 'interfaces/game/character-actions'
+import { useCallback } from 'react'
 import { useSetRecoilState } from 'recoil'
-import { charactersState } from 'store/characters/atoms'
+
+import { CharacterActionActors } from 'interfaces/game/character-actions'
+import battleState from 'store/battle/atoms'
 
 const useUpdateCharacters = () => {
-  const setCharacters = useSetRecoilState(charactersState)
+  const setBattle = useSetRecoilState(battleState)
 
-  const updateCharacters = ({ usedBy, targets }: CharacterActionActors) => {
-    const newCharactersStatus = targets.concat(usedBy)
+  const updateCharacters = useCallback(
+    ({ usedBy, targets }: CharacterActionActors) => {
+      const newCharactersStatus = targets.concat(usedBy)
 
-    setCharacters(prevCharacters => {
-      const newHeroes = [...prevCharacters.heroes].map(prevHero => {
-        const matchingHero = newCharactersStatus.find(({ id }) => id === prevHero.id)
-        return matchingHero ? matchingHero : prevHero
+      setBattle(prevBattle => {
+        const newHeroes = [...prevBattle.heroes].map(prevHero => {
+          const matchingHero = newCharactersStatus.find(({ id }) => id === prevHero.id) || prevHero
+          return matchingHero
+        })
+
+        const newEnemies = [...prevBattle.enemies].map(prevEnemy => {
+          const matchingEnemy = newCharactersStatus.find(({ id }) => id === prevEnemy.id) || prevEnemy
+          return matchingEnemy
+        })
+
+        return {
+          heroes: newHeroes,
+          enemies: newEnemies,
+        }
       })
-
-      const newEnemies = [...prevCharacters.enemies].map(prevEnemy => {
-        const matchingEnemy = newCharactersStatus.find(({ id }) => id === prevEnemy.id)
-        return matchingEnemy ? matchingEnemy : prevEnemy
-      })
-
-      return {
-        heroes: newHeroes,
-        enemies: newEnemies,
-      }
-    })
-  }
+    },
+    [setBattle]
+  )
 
   return updateCharacters
 }

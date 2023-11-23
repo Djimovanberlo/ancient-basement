@@ -1,6 +1,6 @@
 import { Character } from 'interfaces/game/character'
 
-export interface Battleground {
+export interface Battle {
   heroes: Character[]
   enemies: Character[]
 }

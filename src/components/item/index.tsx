@@ -3,7 +3,7 @@ import { useResetRecoilState, useSetRecoilState } from 'recoil'
 import { Target } from 'interfaces/game/character-actions'
 import { ItemName } from 'interfaces/game/items'
 import itemCollection from 'data/items'
-import { turnState } from 'store/turn/atoms'
+import turnState from 'store/turn/atoms'
 
 const Item = () => {
   // temp

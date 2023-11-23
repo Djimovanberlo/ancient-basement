@@ -1,12 +1,12 @@
 import { useId } from 'react'
 import { useRecoilValue } from 'recoil'
 
-import { charactersState } from 'store/characters/atoms'
+import battleState from 'store/battle/atoms'
 import HeroCard from 'components/hero-card'
 
 const HeroCardsWrapper = () => {
   const id = useId()
-  const { heroes } = useRecoilValue(charactersState)
+  const { heroes } = useRecoilValue(battleState)
 
   return (
     <div className='heroCardsWrapper'>

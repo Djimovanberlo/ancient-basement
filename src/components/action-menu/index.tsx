@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil'
 
 import { ActionName } from 'interfaces/game/character-actions'
 import ItemMenu from 'components/item-menu'
-import { turnState } from 'store/turn/atoms'
+import turnState from 'store/turn/atoms'
 
 const ActionMenu = () => {
   const { action } = useRecoilValue(turnState)

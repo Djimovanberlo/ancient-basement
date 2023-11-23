@@ -1,15 +1,17 @@
 import { atom } from 'recoil'
 
 import { goblin } from 'data/enemies'
-import { Battleground } from 'interfaces/game/combat'
+import { Battle } from 'interfaces/game/battle'
 import { chad, eugene, irene, olive } from 'data/heroes'
 
-const CHARACTERS_KEY = 'characters'
+const BATTLE = 'battle'
 
-export const charactersState = atom<Battleground>({
-  key: CHARACTERS_KEY,
+const battleState = atom<Battle>({
+  key: BATTLE,
   default: {
     heroes: [irene, chad, olive, eugene],
     enemies: [goblin],
   },
 })
+
+export default battleState
