@@ -1,9 +1,10 @@
-import React from 'react'
-
-import { ActiveGameProps } from 'interfaces/pages/active'
 import { GameState } from 'interfaces/game/game'
 
-const Victory: React.FC<ActiveGameProps> = ({ updateGameState }) => {
+interface Props {
+  updateGameState: (newGameState: GameState) => void
+}
+
+const Victory = ({ updateGameState }: Props) => {
   return <div onClick={() => updateGameState(GameState.COMBAT)}>Victory</div>
 }
 

@@ -1,6 +1,5 @@
-import { ModalProps } from 'interfaces/components/modal'
 import Button from 'components/button'
-import Modal from 'components/modal'
+import Modal, { ModalProps } from 'components/modal'
 import { H2, P1 } from 'components/typography'
 
 const NewGameModal = ({ toggleModal, isOpen }: ModalProps) => {

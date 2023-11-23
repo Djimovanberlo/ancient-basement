@@ -1,6 +1,11 @@
-import { TypographyProps } from 'interfaces/components/typography'
+import { ReactNode } from 'react'
 
-export const H1 = ({ children, className }: TypographyProps) => {
+interface Props {
+  children: ReactNode
+  className?: string
+}
+
+export const H1 = ({ children, className }: Props) => {
   return (
     <h1 id='H1' className={className}>
       {children}
@@ -8,7 +13,7 @@ export const H1 = ({ children, className }: TypographyProps) => {
   )
 }
 
-export const H2 = ({ children, className }: TypographyProps) => {
+export const H2 = ({ children, className }: Props) => {
   return (
     <p id='H2' className={className}>
       {children}
@@ -16,7 +21,7 @@ export const H2 = ({ children, className }: TypographyProps) => {
   )
 }
 
-export const P1 = ({ children, className }: TypographyProps) => {
+export const P1 = ({ children, className }: Props) => {
   return (
     <p id='P1' className={className}>
       {children}
@@ -24,7 +29,7 @@ export const P1 = ({ children, className }: TypographyProps) => {
   )
 }
 
-export const P2 = ({ children, className }: TypographyProps) => {
+export const P2 = ({ children, className }: Props) => {
   return (
     <p id='P2' className={className}>
       {children}
