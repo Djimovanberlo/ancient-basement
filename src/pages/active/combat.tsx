@@ -1,7 +1,8 @@
 import { useRecoilValue } from 'recoil'
 
 import { ActiveGameProps } from 'interfaces/pages/active'
-import { turnState } from 'store/turn/atoms'
+import useCreateNewRound from 'lib/hooks/game/useCreateNewRound'
+import turnState from 'store/turn/atoms'
 import Timeline from 'components/timeline'
 import HeroCardsWrapper from 'components/hero-cards-wrapper'
 import EnemiesWrapper from 'components/enemies-wrapper'
@@ -10,6 +11,7 @@ import TargetMenu from 'components/target-menu'
 
 const Combat = ({ updateGameState }: ActiveGameProps) => {
   const { action, targeting } = useRecoilValue(turnState)
+  useCreateNewRound()
 
   return (
     <div className='combat'>

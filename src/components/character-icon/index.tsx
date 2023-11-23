@@ -3,9 +3,12 @@ import { EnemyName } from 'interfaces/game/enemy'
 import CharacterIconLarge from 'components/character-icon/large'
 import CharacterIconSmall from 'components/character-icon/small'
 
-const CharacterIcon = ({ character }: { character: HeroName | EnemyName }) => {
-  const isLarge = Math.random() < 0.5
+interface Props {
+  character: HeroName | EnemyName | null
+  isLarge?: boolean
+}
 
+const CharacterIcon = ({ character, isLarge = false }: Props) => {
   if (isLarge) return <CharacterIconLarge character={character} />
   return <CharacterIconSmall character={character} />
 }

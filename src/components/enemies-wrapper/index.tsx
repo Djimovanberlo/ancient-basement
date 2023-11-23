@@ -2,11 +2,11 @@ import { useId } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import EnemyCard from 'components/enemy'
-import { charactersState } from 'store/characters/atoms'
+import battleState from 'store/battle/atoms'
 
 const EnemiesWrapper = () => {
   const id = useId()
-  const { enemies } = useRecoilValue(charactersState)
+  const { enemies } = useRecoilValue(battleState)
 
   return (
     <div className='enemiesWrapper'>

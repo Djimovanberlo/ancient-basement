@@ -1,7 +1,7 @@
 import { useSetRecoilState } from 'recoil'
 
 import { ActionName } from 'interfaces/game/character-actions'
-import { turnState } from 'store/turn/atoms'
+import turnState from 'store/turn/atoms'
 
 interface Props {
   actionName: ActionName
