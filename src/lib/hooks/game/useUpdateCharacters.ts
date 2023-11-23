@@ -11,14 +11,12 @@ const useUpdateCharacters = () => {
     setCharacters(prevCharacters => {
       const newHeroes = [...prevCharacters.heroes].map(prevHero => {
         const matchingHero = newCharactersStatus.find(({ id }) => id === prevHero.id)
-        if (matchingHero) return { ...prevHero, status: matchingHero.status }
-        return prevHero
+        return matchingHero ? matchingHero : prevHero
       })
 
       const newEnemies = [...prevCharacters.enemies].map(prevEnemy => {
         const matchingEnemy = newCharactersStatus.find(({ id }) => id === prevEnemy.id)
-        if (matchingEnemy) return { ...prevEnemy, status: matchingEnemy.status }
-        return prevEnemy
+        return matchingEnemy ? matchingEnemy : prevEnemy
       })
 
       return {
