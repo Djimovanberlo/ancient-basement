@@ -50,6 +50,7 @@ The player controls 4 heroes: Irene, Chad, Olive and Eugene.
 ---
 
 - Game: the overall game; a game is made up of rounds
+- Battle: the game has 50(?) battles, after which the player wins.
 - Round: an instance of a battle; heroes receive rewards at the end of a round
 - Turn: an individual character's turn within the round
 - Action: a character can choose one action each turn

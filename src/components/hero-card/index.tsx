@@ -1,12 +1,11 @@
 import { useRecoilValue } from 'recoil'
 
 import { Resource } from 'interfaces/game/resources'
-import { H2 } from 'components/typography'
+import { Character } from 'interfaces/game/character'
+import selectActiveTurn from 'store/round/selectors'
 import ResourceBar from 'components/resource-bar'
 import ActionButtons from 'components/action-buttons'
-import { Character } from 'interfaces/game/character'
-import roundState from 'store/round/atoms'
-import selectActiveTurn from 'store/round/selectors'
+import { H2 } from 'components/typography'
 
 interface Props {
   hero: Character

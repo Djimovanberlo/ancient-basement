@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const useSplashScreen = () => {
@@ -6,7 +6,7 @@ const useSplashScreen = () => {
   const [isNewGameOpen, setIsNewGameOpen] = useState<boolean>(false)
   const [isRulesOpen, setisRulesOpen] = useState<boolean>(false)
 
-  const navigateToActive = (e: React.MouseEvent<HTMLElement>) => {
+  const navigateToActive = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault()
     navigate('/active')
   }
