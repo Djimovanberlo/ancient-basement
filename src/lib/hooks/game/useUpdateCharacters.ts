@@ -2,6 +2,7 @@ import { useCallback } from 'react'
 import { useSetRecoilState } from 'recoil'
 
 import { CharacterActionActors } from 'interfaces/game/character-actions'
+import { findCharacterById, getAliveCharacters } from 'lib/game/characters'
 import battleState from 'store/battle/atoms'
 
 const useUpdateCharacters = () => {
@@ -9,18 +10,20 @@ const useUpdateCharacters = () => {
 
   const updateCharacters = useCallback(
     ({ usedBy, targets }: CharacterActionActors) => {
-      const newCharactersStatus = targets.concat(usedBy)
+      const newCharacters = targets.concat(usedBy)
 
       setBattle(prevBattle => {
-        const newHeroes = [...prevBattle.heroes].map(prevHero => {
-          const matchingHero = newCharactersStatus.find(({ id }) => id === prevHero.id) || prevHero
-          return matchingHero
-        })
+        const newHeroes = getAliveCharacters(
+          [...prevBattle.heroes].map(prevHero => {
+            return findCharacterById(newCharacters, prevHero?.id) || prevHero
+          })
+        )
 
-        const newEnemies = [...prevBattle.enemies].map(prevEnemy => {
-          const matchingEnemy = newCharactersStatus.find(({ id }) => id === prevEnemy.id) || prevEnemy
-          return matchingEnemy
-        })
+        const newEnemies = getAliveCharacters(
+          [...prevBattle.enemies].map(prevEnemy => {
+            return findCharacterById(newCharacters, prevEnemy?.id) || prevEnemy
+          })
+        )
 
         return {
           heroes: newHeroes,

@@ -1,3 +1,4 @@
+import { createNewRound } from 'lib/game/round'
 import { useEffect } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 
@@ -11,17 +12,13 @@ const useCreateNewRound = () => {
   useEffect(() => {
     if (round.turnOrder.length === 0) {
       const allCharacters = [...heroes, ...enemies]
+      const newTurnOrder = createNewRound(allCharacters)
 
-      // TODO replace this with speed calculation to determine turn order
-      for (let i = allCharacters.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1))
-        ;[allCharacters[i], allCharacters[j]] = [allCharacters[j], allCharacters[i]]
-      }
-
-      setRound({
-        turnOrder: allCharacters,
-      })
+      setRound(prevState => ({
+        ...prevState,
+        turnOrder: newTurnOrder,
+      }))
     }
-  }, [heroes, enemies, setRound, round.turnOrder.length])
+  }, [heroes, enemies, setRound, round])
 }
 export default useCreateNewRound
